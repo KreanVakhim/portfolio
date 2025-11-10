@@ -1,0 +1,5 @@
+html { scroll-behavior: smooth; }
+.skill-bar { @apply h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden; }
+.skill-progress { @apply h-full bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full transition-all duration-1000; }
+.card-hover { transition: all 0.3s ease; }
+.card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }

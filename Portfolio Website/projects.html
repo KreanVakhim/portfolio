@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | VaKhim Krean</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" class="fixed top-6 right-6 z-50 p-2 rounded-lg bg-gray-200 dark:bg-gray-700">
+    <span class="sun hidden dark:inline">Sun</span>
+    <span class="moon dark:hidden">Moon</span>
+  </button>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-40 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="font-bold text-lg">Sok Ratha</a>
+      <div class="space-x-6">
+        <a href="index.html" class="hover:text-indigo-600">Home</a>
+        <a href="about.html" class="hover:text-indigo-600">About</a>
+        <a href="skills.html" class="hover:text-indigo-600">Skills</a>
+        <a href="experience.html" class="hover:text-indigo-600">Experience</a>
+        <a href="projects.html" class="text-indigo-600 font-medium">Projects</a>
+        <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Projects Section -->
+  <main class="pt-24 pb-16 px-6 max-w-6xl mx-auto">
+    <h1 class="text-4xl font-bold mb-4 text-center">My Projects</h1>
+    <p class="text-center text-gray-600 dark:text-gray-400 mb-12">Click image or button to view live demo</p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Project 1: Coffee Shop (Teamwork) -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover group">
+        <a href="https://project-gamma-gold.vercel.app/" target="_blank" class="block">
+          <img src="assets/img/coffee teamwork.png" alt="Coffee Shop - Team Project" 
+               class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+        </a>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Coffee Shop (Teamwork)</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+            Responsive coffee shop website with menu, about, and contact. Built collaboratively using Git.
+          </p>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mb-3">
+            <strong>Tech:</strong> HTML, CSS, JavaScript
+          </p>
+          <div class="flex gap-3">
+            <a href="https://project-gamma-gold.vercel.app/" target="_blank" 
+               class="flex-1 text-center px-4 py-2 bg-indigo-600 text-white text-sm rounded-lg hover:bg-indigo-700 transition">
+              Live Demo
+            </a>
+            <a href="https://github.com/yourusername/coffee-teamwork" target="_blank"
+               class="flex-1 text-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Coffee Shop (Solo Design) -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden card-hover group">
+        <a href="https://project-design-kohl.vercel.app/" target="_blank" class="block">
+          <img src="assets/img/coffee My self.png" alt="Coffee Shop - Solo Design" 
+               class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"/>
+        </a>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Coffee Shop (Solo Design)</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+            Personal redesign of coffee shop with modern UI, animations, and mobile-first layout.
+          </p>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mb-3">
+            <strong>Tech:</strong> HTML, CSS, JavaScript, Tailwind
+          </p>
+          <div class="flex gap-3">
+            <a href="https://project-design-kohl.vercel.app/" target="_blank" 
+               class="flex-1 text-center px-4 py-2 bg-indigo-600 text-white text-sm rounded-lg hover:bg-indigo-700 transition">
+              Live Demo
+            </a>
+            <a href="https://github.com/KreanVakhim/Project-design" target="_blank"
+               class="flex-1 text-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add More Projects Below -->
+      <!-- Copy-paste the block above and change image, title, links, tech -->
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 text-center text-sm text-gray-500 dark:text-gray-400 border-t">
+    <p>© 2025 VaKhim Krean. Made with love in Cambodia.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
