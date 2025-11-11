@@ -4,242 +4,204 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skills | Vakhim Krean</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .skill-bar {
-      height: 0.75rem; /* h-3 */
-      background-color: #e5e7eb; /* bg-gray-200 */
-      border-radius: 9999px; /* rounded-full */
-      overflow: hidden;
-    }
-    .dark .skill-bar {
-      background-color: #374151; /* dark:bg-gray-700 */
-    }
-    .skill-progress {
-      height: 100%; /* h-full */
-      background-image: linear-gradient(to right, #a21caf, #ec4899); /* from-purple-500 to-pink-500 */
-      transition: width 1s ease-out;
-    }
-  </style>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="assets/css/skills.css" />
+  <link rel="icon" href="assets/img/profile.png" type="image/png">
 </head>
-<body class="bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 min-h-screen">
+<body>
 
   <!-- Theme Toggle -->
-  <button id="theme-toggle" class="fixed top-6 right-6 z-50 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300">
-    <span class="sun hidden dark:inline text-yellow-500 text-xl">Sun</span>
-    <span class="moon dark:hidden text-purple-600 text-xl">Moon</span>
+  <button id="theme-toggle" class="theme-btn">
+    <img src="assets/img/icons/sun.png" alt="Light" class="icon sun">
+    <img src="assets/img/icons/moon.png" alt="Dark" class="icon moon">
   </button>
 
-  <!-- Navigation -->
-  <nav class="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-40 shadow-lg">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="font-bold text-2xl text-purple-600 dark:text-purple-400">Vakhim Krean</a>
-      <div class="hidden md:flex space-x-8 text-sm font-medium">
-        <a href="index.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Home</a>
-        <a href="about.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">About</a>
-        <a href="skills.html" class="text-purple-600 dark:text-purple-400 font-bold border-b-2 border-purple-600">Skills</a>
-        <a href="experience.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Experience</a>
-        <a href="projects.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Projects</a>
-        <a href="contact.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Contact</a>
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Vakhim Krean</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
       </div>
-      <button class="md:hidden text-purple-600">Menu</button>
+      <button class="nav-mob">Menu</button>
     </div>
   </nav>
 
-  <!-- Main Content -->
-  <main class="pt-28 pb-20 px-6 max-w-5xl mx-auto">
-    <div class="text-center mb-14">
-      <h1 class="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-        My Skills
-      </h1>
-      <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-        A blend of <strong>technical expertise</strong> and <strong>soft skills</strong> built through real projects, team collaboration, and continuous learning.
-      </p>
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>My Skills</h1>
+      <p>A blend of <strong>technical expertise</strong> and <strong>soft skills</strong> built through real projects, team collaboration, and continuous learning.</p>
     </div>
 
-    <!-- Technical Skills -->
-    <section class="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-10 shadow-xl mb-12">
-      <h2 class="text-3xl font-bold text-purple-700 dark:text-purple-300 mb-8 flex items-center">
-        <span class="mr-3">Code</span> Technical Skills
-      </h2>
-      <div class="space-y-7">
-        <!-- HTML, CSS, Sass -->
+    <!-- Tech Skills -->
+    <section class="tech">
+      <h2>Technical Skills</h2>
+      <div class="list">
         <div>
-          <div class="flex justify-between mb-2">
-            <span class="font-semibold text-purple-600">HTML, CSS, Sass</span>
-            <span class="text-sm text-gray-500">92%</span>
+          <div class="row">
+            <span class="label">HTML, CSS, Sass</span>
+            <span class="perc">92%</span>
           </div>
-          <div class="skill-bar">
-            <div class="skill-progress" style="width:0%" data-width="92%"></div>
+          <div class="bar">
+            <div class="prog" data-width="92%"></div>
           </div>
         </div>
-
-        <!-- JavaScript -->
         <div>
-          <div class="flex justify-between mb-2">
-            <span class="font-semibold text-purple-600">JavaScript</span>
-            <span class="text-sm text-gray-500">85%</span>
+          <div class="row">
+            <span class="label">JavaScript</span>
+            <span class="perc">85%</span>
           </div>
-          <div class="skill-bar">
-            <div class="skill-progress" style="width:0%" data-width="85%"></div>
+          <div class="bar">
+            <div class="prog" data-width="85%"></div>
           </div>
         </div>
-
-        <!-- Python -->
         <div>
-          <div class="flex justify-between mb-2">
-            <span class="font-semibold text-purple-600">Python (Flask, Django Basics)</span>
-            <span class="text-sm text-gray-500">78%</span>
+          <div class="row">
+            <span class="label">Python (Flask, Django Basics)</span>
+            <span class="perc">78%</span>
           </div>
-          <div class="skill-bar">
-            <div class="skill-progress" style="width:0%" data-width="78%"></div>
+          <div class="bar">
+            <div class="prog" data-width="78%"></div>
           </div>
         </div>
-
-        <!-- Git & GitHub -->
         <div>
-          <div class="flex justify-between mb-2 […]
-
-            <span class="font-semibold text-purple-600">Git & GitHub</span>
-            <span class="text-sm text-gray-500">88%</span>
+          <div class="row">
+            <span class="label">Git & GitHub</span>
+            <span class="perc">88%</span>
           </div>
-          <div class="skill-bar">
-            <div class="skill-progress" style="width:0%" data-width="88%"></div>
+          <div class="bar">
+            <div class="prog" data-width="88%"></div>
           </div>
         </div>
-
-        <!-- Responsive Design -->
         <div>
-          <div class="flex justify-between mb-2">
-            <span class="font-semibold text-purple-600">Responsive Web Design</span>
-            <span class="text-sm text-gray-500">90%</span>
+          <div class="row">
+            <span class="label">Responsive Web Design</span>
+            <span class="perc">90%</span>
           </div>
-          <div class="skill-bar">
-            <div class="skill-progress" style="width:0%" data-width="90%"></div>
+          <div class="bar">
+            <div class="prog" data-width="90%"></div>
           </div>
         </div>
-
-        <!-- UI/UX Principles -->
         <div>
-          <div class="flex justify-between mb-2">
-            <span class="font-semibold text-purple-600">UI/UX Design (Figma, Principles)</span>
-            <span class="text-sm text-gray-500">75%</span>
+          <div class="row">
+            <span class="label">UI/UX Design (Figma, Principles)</span>
+            <span class="perc">75%</span>
           </div>
-          <div class="skill-bar">
-            <div class="skill-progress" style="width:0%" data-width="75%"></div>
+          <div class="bar">
+            <div class="prog" data-width="75%"></div>
           </div>
         </div>
-
-        <!-- Tools -->
         <div>
-          <div class="flex justify-between mb-2">
-            <span class="font-semibold text-purple-600">VS Code, Postman, Canva</span>
-            <span class="text-sm text-gray-500">87%</span>
+          <div class="row">
+            <span class="label">VS Code, Postman, Canva</span>
+            <span class="perc">87%</span>
           </div>
-          <div class="skill-bar">
-            <div class="skill-progress" style="width:0%" data-width="87%"></div>
+          <div class="bar">
+            <div class="prog" data-width="87%"></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Soft Skills -->
-    <section class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl p-8 md:p-10 shadow-xl">
-      <h2 class="text-3xl font-bold text-purple-700 dark:text-purple-300 mb-8 flex items-center">
-        <span class="mr-3">People</span> Soft Skills
-      </h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <div class="bg-white dark:bg-gray-900 p-4 rounded-2xl text-center shadow hover:shadow-purple-500/30 transition transform hover:-translate-y-1">
-          <span class="text-2xl block mb-1">Teamwork</span>
-          <p class="text-xs text-gray-500">Team Projects</p>
+    <section class="soft">
+      <h2>Soft Skills</h2>
+      <div class="grid">
+        <div class="box">
+          <span>Teamwork</span>
+          <p>Team Projects</p>
         </div>
-        <div class="bg-white dark:bg-gray-900 p-4 rounded-2xl text-center shadow hover:shadow-purple-500/30 transition transform hover:-translate-y-1">
-          <span class="text-2xl block mb-1">Communication</span>
-          <p class="text-xs text-gray-500">Presentations</p>
+        <div class="box">
+          <span>Communication</span>
+          <p>Presentations</p>
         </div>
-        <div class="bg-white dark:bg-gray-900 p-4 rounded-2xl text-center shadow hover:shadow-purple-500/30 transition transform hover:-translate-y-1">
-          <span class="text-2xl block mb-1">Leadership</span>
-          <p class="text-xs text-gray-500">Team Lead</p>
+        <div class="box">
+          <span>Leadership</span>
+          <p>Team Lead</p>
         </div>
-        <div class="bg-white dark:bg-gray-900 p-4 rounded-2xl text-center shadow hover:shadow-purple-500/30 transition transform hover:-translate-y-1">
-          <span class="text-2xl block mb-1">Problem Solving</span>
-          <p class="text-xs text-gray-500">Debugging</p>
+        <div class="box">
+          <span>Problem Solving</span>
+          <p>Debugging</p>
         </div>
-        <div class="bg-white dark:bg-gray-900 p-4 rounded-2xl text-center shadow hover:shadow-purple-500/30 transition transform hover:-translate-y-1">
-          <span class="text-2xl block mb-1">Agile</span>
-          <p class="text-xs text-gray-500">Scrum Basics</p>
+        <div class="box">
+          <span>Agile</span>
+          <p>Scrum Basics</p>
         </div>
-        <div class="bg-white dark:bg-gray-900 p-4 rounded-2xl text-center shadow hover:shadow-purple-500/30 transition transform hover:-translate-y-1">
-          <span class="text-2xl block mb-1">Creativity</span>
-          <p class="text-xs text-gray-500">Design Ideas</p>
+        <div class="box">
+          <span>Creativity</span>
+          <p>Design Ideas</p>
         </div>
-        <div class="bg-white dark:bg-gray-900 p-4 rounded-2xl text-center shadow hover:shadow-purple-500/30 transition transform hover:-translate-y-1">
-          <span class="text-2xl block mb-1">Honesty</span>
-          <p class="text-xs text-gray-500">Integrity</p>
+        <div class="box">
+          <span>Honesty</span>
+          <p>Integrity</p>
         </div>
-        <div class="bg-white dark:bg-gray-900 p-4 rounded-2xl text-center shadow hover:shadow-purple-500/30 transition transform hover:-translate-y-1">
-          <span class="text-2xl block mb-1">Adaptability</span>
-          <p class="text-xs text-gray-500">Fast Learner</p>
+        <div class="box">
+          <span>Adaptability</span>
+          <p>Fast Learner</p>
         </div>
       </div>
     </section>
 
-    <!-- Skill Stats -->
-    <section class="mt-16 grid md:grid-cols-3 gap-6 text-center">
-      <div class="bg-gradient-to-br from-purple-500 to-pink-500 p-6 rounded-2xl text-white shadow-xl">
-        <h3 class="text-4xl font-bold">15+</h3>
-        <p class="mt-2">Team Projects</p>
+    <!-- Stats -->
+    <section class="stats">
+      <div class="stat">
+        <h3>15+</h3>
+        <p>Team Projects</p>
       </div>
-      <div class="bg-gradient-to-br from-indigo-500 to-purple-500 p-6 rounded-2xl text-white shadow-xl">
-        <h3 class="text-4xl font-bold">4</h3>
-        <p class="mt-2">Certificates</p>
+      <div class="stat">
+        <h3>4</h3>
+        <p>Certificates</p>
       </div>
-      <div class="bg-gradient-to-br from-pink-500 to-red-500 p-6 rounded-2xl text-white shadow-xl">
-        <h3 class="text-4xl font-bold">100+</h3>
-        <p class="mt-2">Hours Coded</p>
+      <div class="stat">
+        <h3>100+</h3>
+        <p>Hours Coded</p>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="py-10 text-center text-sm text-gray-500 dark:text-gray-400 border-t bg-white/50 dark:bg-gray-900/50 backdrop-blur mt-20">
+  <footer class="footer">
     <p>© 2025 Vakhim Krean • Web Developer • Cambodia</p>
-    <p class="mt-1 text-xs">Last Updated: November 11, 2025 – 03:14 PM (UTC+7)</p>
+    <p class="time">Last Updated: November 11, 2025 — 10:23 PM (+07)</p>
+    <div class="social">
+      <a href="mailto:vakhim.krean@student.passerellesnumeriques.org"><img src="assets/img/icons/email.png" alt="Email" class="icon"></a>
+      <a href="https://github.com/vakhimkrean" target="_blank"><img src="assets/img/icons/github.png" alt="GitHub" class="icon"></a>
+      <a href="https://linkedin.com/in/vakhimkrean" target="_blank"><img src="assets/img/icons/linkedin.png" alt="LinkedIn" class="icon"></a>
+    </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="assets/js/skills.js"></script>
   <script>
-    // Animate skill bars on scroll
-    const observer = new IntersectionObserver((entries) => {
+    // Animate bars
+    const obs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const bar = entry.target;
           const width = bar.getAttribute('data-width');
-          setTimeout(() => {
-            bar.style.width = width;
-          }, 100);
+          setTimeout(() => bar.style.width = width, 100);
         }
       });
     }, { threshold: 0.5 });
+    document.querySelectorAll('.prog').forEach(bar => obs.observe(bar));
 
-    document.querySelectorAll('.skill-progress').forEach(bar => {
-      observer.observe(bar);
-    });
-
-    // Theme toggle
-    const themeToggle = document.getElementById('theme-toggle');
+    // Theme
+    const toggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
-
-    themeToggle.addEventListener('click', () => {
+    toggle.addEventListener('click', () => {
       html.classList.toggle('dark');
       localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
     });
-
-    if (localStorage.getItem('theme') === 'dark') {
-      html.classList.add('dark');
-    }
+    if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
   </script>
 </body>
 </html>

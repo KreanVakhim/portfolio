@@ -4,165 +4,166 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | Vakhim Krean</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Khmer&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    body { font-family: 'Inter', 'Khmer', sans-serif; }
-    h1, h2, h3 { font-family: 'Inter', sans-serif; }
-  </style>
+  <meta name="description" content="Vakhim Krean — 21-year-old IT student and aspiring Web Developer from Cambodia. Passionate about code, design, and leadership."/>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="assets/css/about.css" />
+  <link rel="icon" href="assets/img/profile.png" type="image/png">
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-purple-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 min-h-screen">
+<body>
 
   <!-- Theme Toggle -->
-  <button id="theme-toggle" class="fixed top-6 right-6 z-50 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all">
-    <span class="sun hidden dark:inline text-yellow-500 text-xl">Sun</span>
-    <span class="moon dark:hidden text-indigo-600 text-xl">Moon</span>
+  <button id="theme-toggle" class="theme-btn">
+    <img src="assets/img/icons/sun.png" alt="Light" class="icon sun">
+    <img src="assets/img/icons/moon.png" alt="Dark" class="icon moon">
   </button>
 
-  <!-- Navigation -->
-  <nav class="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-40 shadow-md">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="font-bold text-xl text-purple-600 dark:text-purple-400">Vakhim Krean</a>
-      <div class="hidden md:flex space-x-8 text-sm font-medium">
-        <a href="index.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Home</a>
-        <a href="about.html" class="text-purple-600 dark:text-purple-400 font-bold">About</a>
-        <a href="skills.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Skills</a>
-        <a href="experience.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Experience</a>
-        <a href="projects.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Projects</a>
-        <a href="contact.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Contact</a>
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Vakhim Krean</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
       </div>
-      <button class="md:hidden">Menu</button>
+      <button class="nav-mob">Menu</button>
     </div>
   </nav>
 
-  <!-- Main Content -->
-  <main class="pt-28 pb-20 px-6 max-w-5xl mx-auto">
-    <!-- Hero Profile -->
-    <div class="text-center mb-14">
-      <img src="assets/img/profile.png" alt="Vakhim Krean" class="w-36 h-36 rounded-full mx-auto mb-5 object-cover border-4 border-purple-600 shadow-2xl" />
-      <h1 class="text-4xl md:text-5xl font-bold text-purple-700 dark:text-purple-300">Vakhim Krean</h1>
-      <p class="text-lg text-gray-600 dark:text-gray-300 mt-2">IT Student • Web Developer • Age 21</p>
-      <p class="text-lg text-gray-600 dark:text-gray-300 mt-2">“My success is my mom’s success. Remember, your success is in your hands. Don’t wait for your dreams to come  you must chase your dreams.”</p>
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Hero -->
+    <div class="hero">
+      <img src="assets/img/profile.png" alt="Vakhim Krean" class="avatar">
+      <h1>Vakhim Krean</h1>
+      <p class="tag">IT Student • Web Developer • Age 21</p>
+      <p class="quote">
+        “My success is my mom’s success. Remember, your success is in your hands. Don’t wait for your dreams to come — you must chase your dreams.”
+      </p>
     </div>
 
-    <!-- Personal Info -->
-    <section class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl mb-10">
-      <h2 class="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-6 flex items-center">
-        <span class="mr-3">Info</span> Personal Information
-      </h2>
-      <div class="grid md:grid-cols-2 gap-6 text-sm">
+    <!-- Info -->
+    <section class="info">
+      <h2>Personal Information</h2>
+      <div class="grid">
         <div>
-          <p><strong class="text-purple-600">Name:</strong> Vakhim Krean</p>
-          <p><strong class="text-purple-600">Age:</strong> 21 years</p>
-          <p><strong class="text-purple-600">Field:</strong> Information Technology (IT)</p>
+          <p><strong>Name:</strong> Vakhim Krean</p>
+          <p><strong>Age:</strong> 21 years</p>
+          <p><strong>Field:</strong> Information Technology (IT)</p>
         </div>
         <div>
-          <p><strong class="text-purple-600">Study Duration:</strong> 2019 – 2025</p>
-          <p><strong class="text-purple-600">Location:</strong> Cambodia</p>
-          <p><strong class="text-purple-600">Dream Job:</strong> Web Developer & Designer</p>
+          <p><strong>Study Duration:</strong> 2019 – 2025</p>
+          <p><strong>Location:</strong> Cambodia</p>
+          <p><strong>Dream Job:</strong> Web Developer & Designer</p>
         </div>
       </div>
     </section>
 
-    <!-- Background & Scholarships -->
-    <section class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl mb-10">
-      <h2 class="text-2xl font-bold text-purple-700 dark:text-purple-300 mb-6">Background & Scholarships</h2>
-      <div class="space-y-5">
-        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow">
-          <h3 class="font-semibold text-purple-600">Passerelles Numériques Cambodia (PNC)</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300">100% IT Scholarship • Phnom Penh • 2025 – 2026</p>
-          <p class="mt-1 text-sm">Web Development & Software Engineering Training</p>
+    <!-- Background -->
+    <section class="bg">
+      <h2>Background & Scholarships</h2>
+      <div class="stack">
+        <div class="item">
+          <h3>Passerelles Numériques Cambodia (PNC)</h3>
+          <p>100% IT Scholarship • Phnom Penh • 2025 – 2026</p>
+          <p>Web Development & Software Engineering Training</p>
         </div>
-        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow">
-          <h3 class="font-semibold text-purple-600">Mekong Children Organization</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300">100% Scholarship • Oddar Meanchey • 2019 – 2025</p>
-          <p class="mt-1 text-sm">Full support for education and leadership development</p>
+        <div class="item">
+          <h3>Mekong Children Organization</h3>
+          <p>100% Scholarship • Oddar Meanchey • 2019 – 2025</p>
+          <p>Full support for education and leadership development</p>
         </div>
-        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow">
-          <h3 class="font-semibold text-purple-600">Chinese Temple, Siem Reap</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300">1-Year Educational Support • 2018 – 2019</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certificates Section (NEW!) -->
-    <section class="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl mb-10">
-      <h2 class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-6">Certificates & Awards</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- Certificate 1 -->
-        <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center hover:scale-105 transition transform">
-          <img src="assets/img/cert-karol-setha.jpg" alt="Karol & Setha Certificate" class="w-full h-48 object-cover rounded-lg mb-3 shadow" />
-          <h3 class="font-semibold text-indigo-600">Karol & Setha Program</h3>
-          <p class="text-xs text-gray-600 dark:text-gray-400">4 Certificates • 4 Years of Training</p>
-        </div>
-        <!-- Certificate 2 -->
-        <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center hover:scale-105 transition transform">
-          <img src="assets/img/cert-leadership.jpg" alt="Leadership Certificate" class="w-full h-48 object-cover rounded-lg mb-3 shadow" />
-          <h3 class="font-semibold text-indigo-600">Leadership Training</h3>
-          <p class="text-xs text-gray-600 dark:text-gray-400">1 Certificate • Personal Growth</p>
-        </div>
-        <!-- Award 1 -->
-        <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center hover:scale-105 transition transform">
-          <img src="assets/img/award-writing.jpg" alt="Writing Competition Award" class="w-full h-48 object-cover rounded-lg mb-3 shadow" />
-          <h3 class="font-semibold text-yellow-600">Writing Competition</h3>
-          <p class="text-xs text-gray-600 dark:text-gray-400">Provincial & National Level Awards</p>
-        </div>
-        <!-- Monthly Recognition -->
-        <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center hover:scale-105 transition transform">
-          <img src="assets/img/award-monthly.jpg" alt="Monthly Recognition" class="w-full h-48 object-cover rounded-lg mb-3 shadow" />
-          <h3 class="font-semibold text-green-600">Monthly Recognition</h3>
-          <p class="text-xs text-gray-600 dark:text-gray-400">Consistent Excellence</p>
+        <div class="item">
+          <h3>Chinese Temple, Siem Reap</h3>
+          <p>1-Year Educational Support • 2018 – 2019</p>
         </div>
       </div>
     </section>
 
-    <!-- Hobbies & Favorites (Enhanced with Running!) -->
-    <section class="bg-gradient-to-r from-pink-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl">
-      <h2 class="text-2xl font-bold text-purple-700 dark:text-purple-300 mb-6">Favorites & Hobbies</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 text-center">
-        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow hover:shadow-purple-500/20 transition">
-          <span class="text-3xl block mb-2">Music</span>
-          <p class="text-xs text-gray-600 dark:text-gray-400">Sing,and play Guitar, Piano, Drum</p>
+    <!-- Certificates -->
+    <section class="certs">
+      <h2>Certificates & Awards</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="assets/img/cert-karol-setha.jpg" alt="Karol & Setha">
+          <h3>Karol & Setha Program</h3>
+          <p>4 Certificates • 4 Years of Training</p>
         </div>
-        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow hover:shadow-purple-500/20 transition">
-          <span class="text-3xl block mb-2">Sport</span>
-          <p class="text-xs text-gray-600 dark:text-gray-400">Sport: Running</p>
+        <div class="card">
+          <img src="assets/img/cert-leadership.jpg" alt="Leadership">
+          <h3>Leadership Training</h3>
+          <p>1 Certificate • Personal Growth</p>
         </div>
-        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow hover:shadow-purple-500/20 transition">
-          <span class="text-3xl block mb-2">Food</span>
-          <p class="text-xs text-gray-600 dark:text-gray-400">Food: Grilled, Fried Rice, Beef</p>
+        <div class="card">
+          <img src="assets/img/award-writing.jpg" alt="Writing">
+          <h3>Writing Competition</h3>
+          <p>Provincial & National Level Awards</p>
         </div>
-        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow hover:shadow-purple-500/20 transition">
-          <span class="text-3xl block mb-2">Fruit</span>
-          <p class="text-xs text-gray-600 dark:text-gray-400">Fruits: All kinds</p>
-        </div>
-        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow hover:shadow-purple-500/20 transition">
-          <span class="text-3xl block mb-2">Movies</span>
-          <p class="text-xs text-gray-600 dark:text-gray-400">Anime, Manga, Manhwa</p>
-        </div>
-        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow hover:shadow-purple-500/20 transition">
-          <span class="text-3xl block mb-2">Heart</span>
-          <p class="text-xs text-gray-600 dark:text-gray-400">Kind & Friendly People</p>
+        <div class="card">
+          <img src="assets/img/award-monthly.jpg" alt="Monthly">
+          <h3>Monthly Recognition</h3>
+          <p>Consistent Excellence</p>
         </div>
       </div>
     </section>
 
-    <!-- Dream Job -->
-    <section class="text-center mt-14">
-      <h2 class="text-2xl font-bold text-purple-700 dark:text-purple-300 mb-4">Dream Job</h2>
-      <p class="text-lg max-w-2xl mx-auto">
-        To become a <strong class="text-purple-600">Web Developer</strong> and <strong class="text-purple-600">Web Designer</strong> — building beautiful, efficient, and impactful websites that inspire users.
+    <!-- Hobbies -->
+    <section class="hobbies">
+      <h2>Favorites & Hobbies</h2>
+      <div class="grid">
+        <div class="box">
+          <span>Music</span>
+          <p>Sing, Guitar, Piano, Drum</p>
+        </div>
+        <div class="box">
+          <span>Sport</span>
+          <p>Running</p>
+        </div>
+        <div class="box">
+          <span>Food</span>
+          <p>Grilled, Fried Rice, Beef</p>
+        </div>
+        <div class="box">
+          <span>Fruit</span>
+          <p>All kinds</p>
+        </div>
+        <div class="box">
+          <span>Movies</span>
+          <p>Anime, Manga, Manhwa</p>
+        </div>
+        <div class="box">
+          <span>Heart</span>
+          <p>Kind & Friendly People</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dream -->
+    <section class="dream">
+      <h2>Dream Job</h2>
+      <p>
+        To become a <strong>Web Developer</strong> and <strong>Web Designer</strong> — building beautiful, efficient, and impactful websites that inspire users.
       </p>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="py-8 text-center text-sm text-gray-500 dark:text-gray-400 border-t bg-white/50 dark:bg-gray-900/50 backdrop-blur">
+  <footer class="footer">
     <p>© 2025 Vakhim Krean • Web Developer • Cambodia</p>
-    <p class="mt-1 text-xs">Made with Code & Passion</p>
+    <p class="time">Last Updated: November 11, 2025 — 09:57 PM (+07)</p>
+    <div class="social">
+      <a href="mailto:vakhim.krean@student.passerellesnumeriques.org"><img src="assets/img/icons/email.png" alt="Email" class="icon"></a>
+      <a href="https://github.com/vakhimkrean" target="_blank"><img src="assets/img/icons/github.png" alt="GitHub" class="icon"></a>
+      <a href="https://linkedin.com/in/vakhimkrean" target="_blank"><img src="assets/img/icons/linkedin.png" alt="LinkedIn" class="icon"></a>
+    </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <!-- Scripts -->
+  <script src="assets/js/about.js"></script>
 </body>
 </html>
