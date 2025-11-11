@@ -1,57 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Experience | Sok Ratha</title>
+  <title>Experience | Vakhim Krean</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .timeline::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: linear-gradient(to bottom, #c084fc, #ec4899); transform: translateX(-50%); }
+    .timeline-item { transition: all 0.4s ease; }
+    .timeline-item:hover { transform: translateY(-4px); }
+  </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+<body class="bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 min-h-screen">
 
-  <button id="theme-toggle" class="fixed top-6 right-6 z-50 p-2 rounded-lg bg-gray-200 dark:bg-gray-700">
-    <span class="sun hidden dark:inline">Sun</span>
-    <span class="moon dark:hidden">Moon</span>
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" class="fixed top-6 right-6 z-50 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300">
+    <span class="sun hidden dark:inline text-yellow-500 text-xl">Sun</span>
+    <span class="moon dark:hidden text-purple-600 text-xl">Moon</span>
   </button>
 
-  <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-40 shadow-sm">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="font-bold text-lg">Sok Ratha</a>
-      <div class="space-x-6">
-        <a href="index.html" class="hover:text-indigo-600">Home</a>
-        <a href="about.html" class="hover:text-indigo-600">About</a>
-        <a href="skills.html" class="hover:text-indigo-600">Skills</a>
-        <a href="experience.html" class="text-indigo-600 font-medium">Experience</a>
-        <a href="projects.html" class="hover:text-indigo-600">Projects</a>
-        <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-40 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="font-bold text-2xl text-purple-600 dark:text-purple-400">Vakhim Krean</a>
+      <div class="hidden md:flex space-x-8 text-sm font-medium">
+        <a href="index.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Home</a>
+        <a href="about.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">About</a>
+        <a href="skills.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Skills</a>
+        <a href="experience.html" class="text-purple-600 dark:text-purple-400 font-bold border-b-2 border-purple-600 pb-1">Experience</a>
+        <a href="projects.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Projects</a>
+        <a href="contact.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Contact</a>
       </div>
+      <button class="md:hidden text-purple-600">Menu</button>
     </div>
   </nav>
 
-  <main class="pt-24 pb-16 px-6 max-w-4xl mx-auto">
-    <h1 class="text-4xl font-bold mb-8 text-center">Experience & Achievements</h1>
-
-    <div class="space-y-6">
-      <div class="border-l-4 border-indigo-600 pl-4">
-        <h3 class="font-semibold">Karol & Setha Program</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400">4 years • 4 Certificates</p>
-      </div>
-      <div class="border-l-4 border-indigo-600 pl-4">
-        <h3 class="font-semibold">Leadership Training</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400">1 Certificate</p>
-      </div>
-      <div class="border-l-4 border-indigo-600 pl-4">
-        <h3 class="font-semibold">Writing Competitions</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400">Provincial & National Awards</p>
-      </div>
+  <!-- Main Content -->
+  <main class="pt-28 pb-20 px-6 max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h1 class="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600">
+        Experience & Achievements
+      </h1>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        A journey of <strong>education, training, leadership, and recognition</strong> — built through dedication and real-world impact.
+      </p>
     </div>
+
+    <!-- Timeline -->
+    <section class="relative timeline mb-16">
+      <div class="container mx-auto px-6">
+        <div class="space-y-12">
+
+          <!-- 2025–2026: PNC Scholarship -->
+          <div class="timeline-item flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-right pr-8">
+              <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition">
+                <h3 class="text-xl font-bold text-purple-600">Passerelles Numériques Cambodia (PNC)</h3>
+                <p class="text-sm text-gray-500 mt-1">Phnom Penh, Cambodia</p>
+                <p class="mt-3 text-sm"><strong>100% IT Scholarship</strong> • Web Development & Software Engineering</p>
+                <p class="mt-2 text-xs text-gray-600 dark:text-gray-400">Hands-on training, real projects, and professional mentorship.</p>
+              </div>
+            </div>
+            <div class="md:w-1/2 pl-8 mt-6 md:mt-0 text-left">
+              <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-3 rounded-full w-32 text-center font-semibold text-sm">
+                2025 – 2026
+              </div>
+            </div>
+          </div>
+
+          <!-- 2019–2025: Mekong Children -->
+          <div class="timeline-item flex flex-col md:flex-row-reverse items-center">
+            <div class="md:w-1/2 text-left pl-8">
+              <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition">
+                <h3 class="text-xl font-bold text-purple-600">Mekong Children Organization</h3>
+                <p class="text-sm text-gray-500 mt-1">Oddar Meanchey, Cambodia</p>
+                <p class="mt-3 text-sm"><strong>100% Full Scholarship</strong> • 6 Years of Support</p>
+                <p class="mt-2 text-xs text-gray-600 dark:text-gray-400">Education, personal growth, and leadership development.</p>
+              </div>
+            </div>
+            <div class="md:w-1/2 pr-8 mt-6 md:mt-0 text-right">
+              <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white p-3 rounded-full w-32 text-center font-semibold text-sm">
+                2019 – 2025
+              </div>
+            </div>
+          </div>
+
+          <!-- 2018–2019: Chinese Temple -->
+          <div class="timeline-item flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-right pr-8">
+              <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition">
+                <h3 class="text-xl font-bold text-purple-600">Chinese Temple Educational Support</h3>
+                <p class="text-sm text-gray-500 mt-1">Siem Reap, Cambodia</p>
+                <p class="mt-3 text-sm"><strong>1-Year Scholarship</strong> • Foundational Support</p>
+              </div>
+            </div>
+            <div class="md:w-1/2 pl-8 mt-6 md:mt-0 text-left">
+              <div class="bg-gradient-to-r from-pink-500 to-red-500 text-white p-3 rounded-full w-32 text-center font-semibold text-sm">
+                2018 – 2019
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Training & Certificates -->
+    <section class="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-10 shadow-2xl mb-12">
+      <h2 class="text-3xl font-bold text-purple-700 dark:text-purple-300 mb-8 text-center">
+        Training & Certificates
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Karol & Setha -->
+        <div class="bg-gradient-to-br from-purple-100 to-pink-100 dark:from-gray-700 dark:to-gray-600 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+          <img src="assets/img/cert-karol-setha.jpg" alt="Karol & Setha Certificate" class="w-full h-48 object-cover rounded-lg mb-4 shadow" />
+          <h3 class="text-xl font-bold text-purple-600">Karol & Setha Program</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1"><strong>4 Years • 4 Certificates</strong></p>
+          <p class="text-xs mt-2">Leadership, Communication, Project Management</p>
+        </div>
+
+        <!-- Leadership Training -->
+        <div class="bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-gray-700 dark:to-gray-600 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+          <img src="assets/img/cert-leadership.jpg" alt="Leadership Certificate" class="w-full h-48 object-cover rounded-lg mb-4 shadow" />
+          <h3 class="text-xl font-bold text-purple-600">Leadership Training Course</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1"><strong>1 Certificate</strong></p>
+          <p class="text-xs mt-2">Team Management & Decision Making</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Grid -->
+    <section class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl p-8 md:p-10 shadow-2xl">
+      <h2 class="text-3xl font-bold text-purple-700 dark:text-purple-300 mb-8 text-center">
+        Awards & Recognition
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+          <span class="text-5xl block mb-2">Trophy</span>
+          <h3 class="text-lg font-bold text-purple-600">Writing Competitions</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Provincial & National Level</p>
+        </div>
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+          <span class="text-5xl block mb-2">Star</span>
+          <h3 class="text-lg font-bold text-green-600">Monthly Recognition</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Consistent Excellence</p>
+        </div>
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+          <span class="text-5xl block mb-2">Medal</span>
+          <h3 class="text-lg font-bold text-yellow-600">Team Collaboration</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Agile & Git Projects</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="mt-16 grid md:grid-cols-4 gap-6 text-center">
+      <div class="bg-gradient-to-br from-purple-500 to-pink-500 p-6 rounded-2xl text-white shadow-xl">
+        <h3 class="text-4xl font-bold">6</h3>
+        <p class="mt-2">Years Supported</p>
+      </div>
+      <div class="bg-gradient-to-br from-indigo-500 to-purple-500 p-6 rounded-2xl text-white shadow-xl">
+        <h3 class="text-4xl font-bold">5</h3>
+        <p class="mt-2">Certificates</p>
+      </div>
+      <div class="bg-gradient-to-br from-pink-500 to-red-500 p-6 rounded-2xl text-white shadow-xl">
+        <h3 class="text-4xl font-bold">15+</h3>
+        <p class="mt-2">Team Projects</p>
+      </div>
+      <div class="bg-gradient-to-br from-green-500 to-teal-500 p-6 rounded-2xl text-white shadow-xl">
+        <h3 class="text-4xl font-bold">100%</h3>
+        <p class="mt-2">Scholarship</p>
+      </div>
+    </section>
   </main>
 
-  <footer class="py-8 text-center text-sm text-gray-500 dark:text-gray-400 border-t">
-    <p>© 2025 VaKhim Krean</p>
+  <!-- Footer -->
+  <footer class="py-10 text-center text-sm text-gray-500 dark:text-gray-400 border-t bg-white/50 dark:bg-gray-900/50 backdrop-blur mt-20">
+    <p>© 2025 Vakhim Krean • Web Developer • Cambodia</p>
+    <p class="mt-1 text-xs">Last Updated: November 11, 2025 – 03:16 PM (+07)</p>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    if (localStorage.getItem('theme') === ' roofing') {
+      html.classList.add('dark');
+    }
+  </script>
 </body>
 </html>

@@ -3,69 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Sok Ratha</title>
+  <title>About | Vakhim Krean</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Khmer&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body { font-family: 'Inter', 'Khmer', sans-serif; }
+    h1, h2, h3 { font-family: 'Inter', sans-serif; }
+  </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+<body class="bg-gradient-to-br from-blue-50 to-purple-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 min-h-screen">
 
-  <button id="theme-toggle" class="fixed top-6 right-6 z-50 p-2 rounded-lg bg-gray-200 dark:bg-gray-700">
-    <span class="sun hidden dark:inline">Sun</span>
-    <span class="moon dark:hidden">Moon</span>
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" class="fixed top-6 right-6 z-50 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all">
+    <span class="sun hidden dark:inline text-yellow-500 text-xl">Sun</span>
+    <span class="moon dark:hidden text-indigo-600 text-xl">Moon</span>
   </button>
 
-  <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-40 shadow-sm">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-40 shadow-md">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="font-bold text-lg">Sok Ratha</a>
-      <div class="space-x-6">
-        <a href="index.html" class="hover:text-indigo-600">Home</a>
-        <a href="about.html" class="text-indigo-600 font-medium">About</a>
-        <a href="skills.html" class="hover:text-indigo-600">Skills</a>
-        <a href="experience.html" class="hover:text-indigo-600">Experience</a>
-        <a href="projects.html" class="hover:text-indigo-600">Projects</a>
-        <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+      <a href="index.html" class="font-bold text-xl text-purple-600 dark:text-purple-400">Vakhim Krean</a>
+      <div class="hidden md:flex space-x-8 text-sm font-medium">
+        <a href="index.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Home</a>
+        <a href="about.html" class="text-purple-600 dark:text-purple-400 font-bold">About</a>
+        <a href="skills.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Skills</a>
+        <a href="experience.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Experience</a>
+        <a href="projects.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Projects</a>
+        <a href="contact.html" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Contact</a>
       </div>
+      <button class="md:hidden">Menu</button>
     </div>
   </nav>
 
-  <main class="pt-24 pb-16 px-6 max-w-4xl mx-auto">
-    <h1 class="text-4xl font-bold mb-8 text-center">About Me</h1>
+  <!-- Main Content -->
+  <main class="pt-28 pb-20 px-6 max-w-5xl mx-auto">
+    <!-- Hero Profile -->
+    <div class="text-center mb-14">
+      <img src="assets/img/profile.png" alt="Vakhim Krean" class="w-36 h-36 rounded-full mx-auto mb-5 object-cover border-4 border-purple-600 shadow-2xl" />
+      <h1 class="text-4xl md:text-5xl font-bold text-purple-700 dark:text-purple-300">Vakhim Krean</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mt-2">IT Student • Web Developer • Age 21</p>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mt-2">“My success is my mom’s success. Remember, your success is in your hands. Don’t wait for your dreams to come  you must chase your dreams.”</p>
+    </div>
 
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold mb-4">Education & Background</h2>
-      <p><strong>Field:</strong> Information Technology</p>
-      <p><strong>Duration:</strong> 2019 – 2025</p>
-      <p><strong>Location:</strong> Cambodia</p>
+    <!-- Personal Info -->
+    <section class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl mb-10">
+      <h2 class="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-6 flex items-center">
+        <span class="mr-3">Info</span> Personal Information
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6 text-sm">
+        <div>
+          <p><strong class="text-purple-600">Name:</strong> Vakhim Krean</p>
+          <p><strong class="text-purple-600">Age:</strong> 21 years</p>
+          <p><strong class="text-purple-600">Field:</strong> Information Technology (IT)</p>
+        </div>
+        <div>
+          <p><strong class="text-purple-600">Study Duration:</strong> 2019 – 2025</p>
+          <p><strong class="text-purple-600">Location:</strong> Cambodia</p>
+          <p><strong class="text-purple-600">Dream Job:</strong> Web Developer & Designer</p>
+        </div>
+      </div>
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold mb-4">Career Goal</h2>
-      <p>To become a skilled <strong>Web Developer and Designer</strong>, creating user-friendly websites.</p>
+    <!-- Background & Scholarships -->
+    <section class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl mb-10">
+      <h2 class="text-2xl font-bold text-purple-700 dark:text-purple-300 mb-6">Background & Scholarships</h2>
+      <div class="space-y-5">
+        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow">
+          <h3 class="font-semibold text-purple-600">Passerelles Numériques Cambodia (PNC)</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">100% IT Scholarship • Phnom Penh • 2025 – 2026</p>
+          <p class="mt-1 text-sm">Web Development & Software Engineering Training</p>
+        </div>
+        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow">
+          <h3 class="font-semibold text-purple-600">Mekong Children Organization</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">100% Scholarship • Oddar Meanchey • 2019 – 2025</p>
+          <p class="mt-1 text-sm">Full support for education and leadership development</p>
+        </div>
+        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow">
+          <h3 class="font-semibold text-purple-600">Chinese Temple, Siem Reap</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">1-Year Educational Support • 2018 – 2019</p>
+        </div>
+      </div>
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold mb-4">Scholarships</h2>
-      <ul class="space-y-2">
-        <li>Passerelles Numériques Cambodia (2025–2026)</li>
-        <li>Mekong Children Organization (2019–2025)</li>
-        <li>Chinese Temple, Siem Reap (2018–2019)</li>
-      </ul>
+    <!-- Certificates Section (NEW!) -->
+    <section class="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl mb-10">
+      <h2 class="text-2xl font-bold text-indigo-700 dark:text-indigo-300 mb-6">Certificates & Awards</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Certificate 1 -->
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center hover:scale-105 transition transform">
+          <img src="assets/img/cert-karol-setha.jpg" alt="Karol & Setha Certificate" class="w-full h-48 object-cover rounded-lg mb-3 shadow" />
+          <h3 class="font-semibold text-indigo-600">Karol & Setha Program</h3>
+          <p class="text-xs text-gray-600 dark:text-gray-400">4 Certificates • 4 Years of Training</p>
+        </div>
+        <!-- Certificate 2 -->
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center hover:scale-105 transition transform">
+          <img src="assets/img/cert-leadership.jpg" alt="Leadership Certificate" class="w-full h-48 object-cover rounded-lg mb-3 shadow" />
+          <h3 class="font-semibold text-indigo-600">Leadership Training</h3>
+          <p class="text-xs text-gray-600 dark:text-gray-400">1 Certificate • Personal Growth</p>
+        </div>
+        <!-- Award 1 -->
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center hover:scale-105 transition transform">
+          <img src="assets/img/award-writing.jpg" alt="Writing Competition Award" class="w-full h-48 object-cover rounded-lg mb-3 shadow" />
+          <h3 class="font-semibold text-yellow-600">Writing Competition</h3>
+          <p class="text-xs text-gray-600 dark:text-gray-400">Provincial & National Level Awards</p>
+        </div>
+        <!-- Monthly Recognition -->
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg text-center hover:scale-105 transition transform">
+          <img src="assets/img/award-monthly.jpg" alt="Monthly Recognition" class="w-full h-48 object-cover rounded-lg mb-3 shadow" />
+          <h3 class="font-semibold text-green-600">Monthly Recognition</h3>
+          <p class="text-xs text-gray-600 dark:text-gray-400">Consistent Excellence</p>
+        </div>
+      </div>
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold mb-4">Hobbies</h2>
-      <p class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
-        <span>Guitar, Piano, Drum</span>
-        <span>Running</span>
-        <span>Grilled Food</span>
-        <span>Anime, Manga</span>
+    <!-- Hobbies & Favorites (Enhanced with Running!) -->
+    <section class="bg-gradient-to-r from-pink-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl">
+      <h2 class="text-2xl font-bold text-purple-700 dark:text-purple-300 mb-6">Favorites & Hobbies</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 text-center">
+        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow hover:shadow-purple-500/20 transition">
+          <span class="text-3xl block mb-2">Music</span>
+          <p class="text-xs text-gray-600 dark:text-gray-400">Sing,and play Guitar, Piano, Drum</p>
+        </div>
+        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow hover:shadow-purple-500/20 transition">
+          <span class="text-3xl block mb-2">Sport</span>
+          <p class="text-xs text-gray-600 dark:text-gray-400">Sport: Running</p>
+        </div>
+        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow hover:shadow-purple-500/20 transition">
+          <span class="text-3xl block mb-2">Food</span>
+          <p class="text-xs text-gray-600 dark:text-gray-400">Food: Grilled, Fried Rice, Beef</p>
+        </div>
+        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow hover:shadow-purple-500/20 transition">
+          <span class="text-3xl block mb-2">Fruit</span>
+          <p class="text-xs text-gray-600 dark:text-gray-400">Fruits: All kinds</p>
+        </div>
+        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow hover:shadow-purple-500/20 transition">
+          <span class="text-3xl block mb-2">Movies</span>
+          <p class="text-xs text-gray-600 dark:text-gray-400">Anime, Manga, Manhwa</p>
+        </div>
+        <div class="bg-white dark:bg-gray-900 p-5 rounded-xl shadow hover:shadow-purple-500/20 transition">
+          <span class="text-3xl block mb-2">Heart</span>
+          <p class="text-xs text-gray-600 dark:text-gray-400">Kind & Friendly People</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dream Job -->
+    <section class="text-center mt-14">
+      <h2 class="text-2xl font-bold text-purple-700 dark:text-purple-300 mb-4">Dream Job</h2>
+      <p class="text-lg max-w-2xl mx-auto">
+        To become a <strong class="text-purple-600">Web Developer</strong> and <strong class="text-purple-600">Web Designer</strong> — building beautiful, efficient, and impactful websites that inspire users.
       </p>
     </section>
   </main>
 
-  <footer class="py-8 text-center text-sm text-gray-500 dark:text-gray-400 border-t">
-    <p>© 2025 VaKhim Krean</p>
+  <!-- Footer -->
+  <footer class="py-8 text-center text-sm text-gray-500 dark:text-gray-400 border-t bg-white/50 dark:bg-gray-900/50 backdrop-blur">
+    <p>© 2025 Vakhim Krean • Web Developer • Cambodia</p>
+    <p class="mt-1 text-xs">Made with Code & Passion</p>
   </footer>
 
   <script src="assets/js/main.js"></script>
