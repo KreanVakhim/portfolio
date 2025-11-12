@@ -1,51 +1,57 @@
-// assets/js/about.js
-
-// Theme Toggle Functionality
+// === Theme Toggle ===
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
-
-// Check for saved theme preference
-const savedTheme = localStorage.getItem('theme') || 'light';
-body.classList.add(savedTheme);
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') body.classList.add('light');
 
 themeToggle.addEventListener('click', () => {
-  if (body.classList.contains('light')) {
-    body.classList.replace('light', 'dark');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    body.classList.replace('dark', 'light');
-    localStorage.setItem('theme', 'light');
-  }
+  body.classList.toggle('light');
+  localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
 });
 
-// Mobile Nav Toggle
-const navMob = document.querySelector('.nav-mob');
-const navLinks = document.querySelector('.nav-links');
-
-navMob.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
+// === Navbar Scroll Effect ===
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// Fade-In on Load for Sections
-window.addEventListener('load', () => {
-  document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = 1;
-    section.style.transition = 'opacity 1s ease-out';
-  });
-});
+// === Live Clock ===
+function updateClock() {
+  const now = new Date().toLocaleString('en-US', {
+    timeZone: 'Asia/Phnom_Penh',
+    year: 'numeric', month: 'long', day: 'numeric',
+    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
+  }).replace(',', ' —');
+  document.getElementById('live-time').textContent = now + ' (+07)';
+}
+setInterval(updateClock, 1000);
+updateClock();
 
-// Optional: Intersection Observer for Animations
-const observer = new IntersectionObserver(entries => {
+// === Scroll Reveal ===
+const cards = document.querySelectorAll('.card');
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.15 });
+cards.forEach(card => observer.observe(card));
 
-document.querySelectorAll('.info, .bg, .certs, .hobbies, .dream').forEach(el => {
-  el.classList.add('fade-in');
-  observer.observe(el);
+// === 3D Tilt Effect ===
+document.querySelectorAll('[data-tilt]').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = (y - centerY) / 10;
+    const rotateY = (centerX - x) / 10;
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale(1)`;
+  });
 });
-
-// Add this to CSS if not there: .fade-in { opacity: 0; transition: opacity 1s ease-out; } .fade-in.visible { opacity: 1; }

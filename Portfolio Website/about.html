@@ -3,10 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Vakhim Krean</title>
   <meta name="description" content="Vakhim Krean — 21-year-old IT student and aspiring Web Developer from Cambodia. Passionate about code, design, and leadership."/>
+  <meta name="author" content="Vakhim Krean"/>
+  <meta property="og:title" content="About | Vakhim Krean"/>
+  <meta property="og:description" content="IT Student • Web Developer • Age 21"/>
+  <meta property="og:image" content="assets/img/profile.png"/>
+  <meta property="og:url" content="https://vakhimkrean.github.io/portfolio/about.html"/>
+  <title>About | Vakhim Krean</title>
 
-  <!-- External CSS -->
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/about.css" />
   <link rel="icon" href="assets/img/profile.png" type="image/png">
 </head>
@@ -18,37 +27,40 @@
     <img src="assets/img/icons/moon.png" alt="Dark" class="icon moon">
   </button>
 
-  <!-- Nav -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="logo">Vakhim Krean</a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="skills.html">Skills</a>
-        <a href="experience.html">Experience</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <button class="nav-mob">Menu</button>
-    </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </nav>
 
-  <!-- Main -->
-  <main class="main">
-
-    <!-- Hero -->
-    <div class="hero">
-      <img src="assets/img/profile.png" alt="Vakhim Krean" class="avatar">
-      <h1>Vakhim Krean</h1>
-      <p class="tag">IT Student • Web Developer • Age 21</p>
-      <p class="quote">
-        “My success is my mom’s success. Remember, your success is in your hands. Don’t wait for your dreams to come — you must chase your dreams.”
-      </p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-image">
+        <div class="hexagon">
+          <img src="assets/img/profile.png" alt="Vakhim Krean" class="avatar" loading="lazy">
+        </div>
+      </div>
+      <div class="hero-content">
+        <h1>Vakhim Krean</h1>
+        <p class="tag">IT Student • Web Developer • Age 21</p>
+        <p class="quote">
+          “My success is my mom’s success. Remember, your success is in your hands. Don’t wait for your dreams to come — you must chase your dreams.”
+        </p>
+      </div>
     </div>
+  </section>
 
-    <!-- Info -->
-    <section class="info">
+  <!-- Personal Info -->
+  <section class="info">
+    <div class="container">
       <h2>Personal Information</h2>
       <div class="grid">
         <div>
@@ -62,106 +74,124 @@
           <p><strong>Dream Job:</strong> Web Developer & Designer</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Background -->
-    <section class="bg">
+  <!-- Background & Scholarships -->
+  <section class="bg">
+    <div class="container">
       <h2>Background & Scholarships</h2>
       <div class="stack">
-        <div class="item">
-          <h3>Passerelles Numériques Cambodia (PNC)</h3>
-          <p>100% IT Scholarship • Phnom Penh • 2025 – 2026</p>
-          <p>Web Development & Software Engineering Training</p>
-        </div>
-        <div class="item">
-          <h3>Mekong Children Organization</h3>
-          <p>100% Scholarship • Oddar Meanchey • 2019 – 2025</p>
-          <p>Full support for education and leadership development</p>
-        </div>
-        <div class="item">
-          <h3>Chinese Temple, Siem Reap</h3>
-          <p>1-Year Educational Support • 2018 – 2019</p>
-        </div>
-      </div>
-    </section>
 
-    <!-- Certificates -->
-    <section class="certs">
+        <!-- PNC -->
+        <div class="item bg-card" data-tilt style="background-image: url('assets/img/bg-pnc.jpg');">
+          <div class="overlay"></div>
+          <div class="content">
+            <h3>Passerelles Numériques Cambodia (PNC)</h3>
+            <p>100% IT Scholarship • Phnom Penh • 2025 – 2026</p>
+            <p>Web Development & Software Engineering Training</p>
+          </div>
+        </div>
+
+        <!-- Mekong -->
+        <div class="item bg-card" data-tilt style="background-image: url('assets/img/bg-mekong.jpg');">
+          <div class="overlay"></div>
+          <div class="content">
+            <h3>Mekong Children Organization</h3>
+            <p>100% Scholarship • Oddar Meanchey • 2019 – 2025</p>
+            <p>Full support for education and leadership development</p>
+          </div>
+        </div>
+
+        <!-- Chinese Temple -->
+        <div class="item bg-card" data-tilt style="background-image: url('assets/img/bg-temple.jpg');">
+          <div class="overlay"></div>
+          <div class="content">
+            <h3>Chinese Temple, Siem Reap</h3>
+            <p>1-Year Educational Support • 2018 – 2019</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section class="certs">
+    <div class="container">
       <h2>Certificates & Awards</h2>
       <div class="grid">
-        <div class="card">
+        <div class="card" data-tilt>
           <img src="assets/img/cert-karol-setha.jpg" alt="Karol & Setha">
           <h3>Karol & Setha Program</h3>
           <p>4 Certificates • 4 Years of Training</p>
         </div>
-        <div class="card">
+        <div class="card" data-tilt>
           <img src="assets/img/cert-leadership.jpg" alt="Leadership">
           <h3>Leadership Training</h3>
           <p>1 Certificate • Personal Growth</p>
         </div>
-        <div class="card">
+        <div class="card" data-tilt>
           <img src="assets/img/award-writing.jpg" alt="Writing">
           <h3>Writing Competition</h3>
           <p>Provincial & National Level Awards</p>
         </div>
-        <div class="card">
+        <div class="card" data-tilt>
           <img src="assets/img/award-monthly.jpg" alt="Monthly">
           <h3>Monthly Recognition</h3>
           <p>Consistent Excellence</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Hobbies -->
-    <section class="hobbies">
+  <!-- Hobbies -->
+  <section class="hobbies">
+    <div class="container">
       <h2>Favorites & Hobbies</h2>
       <div class="grid">
-        <div class="box">
-          <span>Music</span>
-          <p>Sing, Guitar, Piano, Drum</p>
-        </div>
-        <div class="box">
-          <span>Sport</span>
-          <p>Running</p>
-        </div>
-        <div class="box">
-          <span>Food</span>
-          <p>Grilled, Fried Rice, Beef</p>
-        </div>
-        <div class="box">
-          <span>Fruit</span>
-          <p>All kinds</p>
-        </div>
-        <div class="box">
-          <span>Movies</span>
-          <p>Anime, Manga, Manhwa</p>
-        </div>
-        <div class="box">
-          <span>Heart</span>
-          <p>Kind & Friendly People</p>
-        </div>
+        <div class="box"><span>Music</span><p>Sing, Guitar, Piano, Drum</p></div>
+        <div class="box"><span>Sport</span><p>Running</p></div>
+        <div class="box"><span>Food</span><p>Grilled, Fried Rice, Beef</p></div>
+        <div class="box"><span>Fruit</span><p>All kinds</p></div>
+        <div class="box"><span>Movies</span><p>Anime, Manga, Manhwa</p></div>
+        <div class="box"><span>Heart</span><p>Kind & Friendly People</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Dream -->
-    <section class="dream">
+  <!-- Dream -->
+  <section class="dream">
+    <div class="container">
       <h2>Dream Job</h2>
       <p>
         To become a <strong>Web Developer</strong> and <strong>Web Designer</strong> — building beautiful, efficient, and impactful websites that inspire users.
       </p>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© 2025 Vakhim Krean • Web Developer • Cambodia</p>
-    <p class="time">Last Updated: November 11, 2025 — 09:57 PM (+07)</p>
+  <div class="footer-inner">
+    <p class="copyright">
+      © 2025 <strong>Vakhim Krean</strong>. Built with love in <span class="kh">Cambodia</span>.
+    </p>
+    <p class="time">
+      Currently: <strong id="live-time">Loading...</strong> • Phnom Penh, Cambodia
+    </p>
     <div class="social">
-      <a href="mailto:vakhim.krean@student.passerellesnumeriques.org"><img src="assets/img/icons/email.png" alt="Email" class="icon"></a>
-      <a href="https://github.com/vakhimkrean" target="_blank"><img src="assets/img/icons/github.png" alt="GitHub" class="icon"></a>
-      <a href="https://linkedin.com/in/vakhimkrean" target="_blank"><img src="assets/img/icons/linkedin.png" alt="LinkedIn" class="icon"></a>
+      <a href="mailto:vakhim.krean@student.passerellesnumeriques.org" class="social-link" aria-label="Email">
+        <img src="assets/img/icons/email.png" alt="Email" class="icon">
+      </a>
+      <a href="https://github.com/vakhimkrean" target="_blank" class="social-link" aria-label="GitHub">
+        <img src="assets/img/icons/github.png" alt="GitHub" class="icon">
+      </a>
+      <a href="https://linkedin.com/in/vakhimkrean" target="_blank" class="social-link" aria-label="LinkedIn">
+        <img src="assets/img/icons/linkedin.png" alt="LinkedIn" class="icon">
+      </a>
     </div>
-  </footer>
+  </div>
+</footer>
 
   <!-- Scripts -->
   <script src="assets/js/about.js"></script>

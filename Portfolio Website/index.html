@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Vakhim Krean — IT Student & Web Developer from Cambodia. HTML, CSS, JavaScript, Python, Flask, MySQL."/>
+  <meta name="description" content="Vakhim Krean — IT Student & Web Developer from Cambodia."/>
   <meta name="author" content="Vakhim Krean"/>
   <meta property="og:title" content="Vakhim Krean | Web Developer"/>
   <meta property="og:description" content="Building modern, responsive websites from Cambodia."/>
@@ -11,7 +11,11 @@
   <meta property="og:url" content="https://vakhimkrean.github.io/portfolio"/>
   <title>Vakhim Krean | Web Developer & Designer</title>
 
-  <!-- External CSS -->
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" href="assets/img/profile.png" type="image/png">
 </head>
@@ -25,23 +29,26 @@
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">Portfolio.</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
+    <div class="logo">Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="skills.html">Skills</a></li>
-      <li><a href="projects.html">Portfolio</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a>
+      </li>
     </ul>
   </nav>
 
   <!-- Hero -->
+   <br><br>
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-content">
         <h2>Hello, It's Me</h2>
         <h1><span class="name">Vakhim Krean</span></h1>
-        <p class="title">And I'm a Web Developer & Designer</p>
+        <p class="title">And I'm a <span id="typing"></span></p>
         <p class="desc">
           Passionate about creating <strong>modern, responsive, and user-friendly websites</strong> using 
           <strong>HTML, CSS, JavaScript, Python, Flask, and MySQL</strong>.
@@ -50,11 +57,11 @@
         <!-- Social Icons -->
         <div class="social">
           <a href="mailto:vakhim.krean@student.passerellesnumeriques.org">
-            <img src="assets/img/icons/email.png" alt="Email" class="icon"></a>
+            <img src="assets/img/Icons/email.png" alt="Email" class="icon"></a>
           <a href="https://github.com/vakhimkrean" target="_blank">
-            <img src="assets/img/icons/github.png" alt="GitHub" class="icon"></a>
+            <img src="assets/img/Icons/github.png" alt="GitHub" class="icon"></a>
           <a href="https://linkedin.com/in/vakhimkrean" target="_blank">
-            <img src="assets/img/icons/linkedin.png" alt="LinkedIn" class="icon"></a>
+            <img src="assets/img/Icons/linkedin.png" alt="LinkedIn" class="icon"></a>
         </div>
 
         <!-- CTA -->
@@ -63,7 +70,9 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="assets/img/profile.png" alt="Vakhim Krean" class="avatar" loading="lazy">
+        <div class="hexagon">
+          <img src="assets/img/profile.png" alt="Vakhim Krean" class="avatar" loading="lazy">
+        </div>
       </div>
     </div>
   </section>
@@ -71,18 +80,18 @@
   <!-- Quick Links -->
   <section class="links">
     <div class="grid">
-      <a href="about.html" class="card">
-        <div class="icon">Person</div>
+      <a href="about.html" class="card" data-tilt>
+        <div class="icon"><i class="fas fa-user"></i></div>
         <h3>About Me</h3>
         <p>Education, goals, and passions</p>
       </a>
-      <a href="skills.html" class="card">
-        <div class="icon">Tools</div>
+      <a href="skills.html" class="card" data-tilt>
+        <div class="icon"><i class="fas fa-cogs"></i></div>
         <h3>Skills</h3>
         <p>Tech stack & soft skills</p>
       </a>
-      <a href="resume.pdf" download class="card">
-        <div class="icon">Document</div>
+      <a href="resume.pdf" download class="card" data-tilt>
+        <div class="icon"><i class="fas fa-file-download"></i></div>
         <h3>Download CV</h3>
         <p>One-click PDF resume</p>
       </a>
@@ -90,15 +99,27 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 <strong>Vakhim Krean</strong>. Built with love in <span class="kh">Cambodia</span>.</p>
-    <p class="time">Currently: <strong>November 11, 2025 — 09:55 PM (+07)</strong> • Phnom Penh, Cambodia</p>
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="copyright">
+      © 2025 <strong>Vakhim Krean</strong>. Built with love in <span class="kh">Cambodia</span>.
+    </p>
+    <p class="time">
+      Currently: <strong id="live-time">Loading...</strong> • Phnom Penh, Cambodia
+    </p>
     <div class="social">
-      <a href="mailto:vakhim.krean@student.passerellesnumeriques.org"><img src="assets/img/icons/email.png" alt="Email" class="icon"></a>
-      <a href="https://github.com/vakhimkrean" target="_blank"><img src="assets/img/icons/github.png" alt="GitHub" class="icon"></a>
-      <a href="https://linkedin.com/in/vakhimkrean" target="_blank"><img src="assets/img/icons/linkedin.png" alt="LinkedIn" class="icon"></a>
+      <a href="mailto:vakhim.krean@student.passerellesnumeriques.org" class="social-link" aria-label="Email">
+        <img src="assets/img/Icons/email.png" alt="Email" class="icon">
+      </a>
+      <a href="https://github.com/vakhimkrean" target="_blank" class="social-link" aria-label="GitHub">
+        <img src="assets/img/Icons/github.png" alt="GitHub" class="icon">
+      </a>
+      <a href="https://linkedin.com/in/vakhimkrean" target="_blank" class="social-link" aria-label="LinkedIn">
+        <img src="assets/img/Icons/linkedin.png" alt="LinkedIn" class="icon">
+      </a>
     </div>
-  </footer>
+  </div>
+</footer>
 
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>

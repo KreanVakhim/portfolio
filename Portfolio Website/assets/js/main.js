@@ -1,87 +1,84 @@
-// assets/js/main.js
-
-// Theme Toggle Functionality
+// === Theme Toggle ===
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
-
-// Check for saved theme preference
-const savedTheme = localStorage.getItem('theme') || 'light';
-body.classList.add(savedTheme);
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') body.classList.add('light');
 
 themeToggle.addEventListener('click', () => {
-  if (body.classList.contains('light')) {
-    body.classList.replace('light', 'dark');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    body.classList.replace('dark', 'light');
-    localStorage.setItem('theme', 'light');
-  }
+  body.classList.toggle('light');
+  localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
 });
 
-// Dynamic Time Update
-function updateTime() {
-  const timeElement = document.querySelector('.time strong');
-  if (timeElement) {
-    const now = new Date();
-    const options = {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true,
-      timeZone: 'Asia/Phnom_Penh'
-    };
-    const formattedTime = now.toLocaleString('en-US', options) + ' (+07)';
-    timeElement.textContent = formattedTime;
-  }
-}
-
-updateTime();
-setInterval(updateTime, 60000);
-
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-
-// Fade-In on Load
-window.addEventListener('load', () => {
-  document.querySelector('.hero-inner').style.opacity = 1;
-});
-
-// Typing Animation for Name (simple pure JS)
-const nameElement = document.querySelector('.name');
-if (nameElement) {
-  const text = nameElement.textContent;
-  nameElement.textContent = '';
-  let i = 0;
-  const typingInterval = setInterval(() => {
-    if (i < text.length) {
-      nameElement.textContent += text.charAt(i);
-      i++;
-    } else {
-      clearInterval(typingInterval);
-    }
-  }, 100);
-}
-
-// Parallax Effect on Hero (simple)
+// === Navbar Scroll Effect ===
+const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
-  const hero = document.querySelector('.hero');
-  const scrollPos = window.scrollY;
-  hero.style.backgroundPositionY = `${scrollPos * 0.5}px`;
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// Additional Text Animation Trigger
-document.addEventListener('DOMContentLoaded', () => {
-  const title = document.querySelector('.title');
-  const desc = document.querySelector('.desc');
-  if (title) title.style.animationPlayState = 'running';
-  if (desc) desc.style.animationPlayState = 'running';
+// === Live Clock (Cambodia Time) ===
+function updateClock() {
+  const now = new Date().toLocaleString('en-US', {
+    timeZone: 'Asia/Phnom_Penh',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true
+  }).replace(',', ' —');
+  document.getElementById('live-time').textContent = now + ' (+07)';
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// === Typing Effect ===
+const words = ["Web Developer", "UI/UX Designer", "Python Enthusiast"];
+let i = 0, j = 0, current = "", isDeleting = false;
+const typingElement = document.getElementById("typing");
+
+function type() {
+  current = words[i];
+  typingElement.textContent = isDeleting ? current.substring(0, j--) : current.substring(0, j++);
+  
+  if (!isDeleting && j === current.length + 1) {
+    isDeleting = true;
+    setTimeout(type, 1500);
+  } else if (isDeleting && j === 0) {
+    isDeleting = false;
+    i = (i + 1) % words.length;
+    setTimeout(type, 500);
+  } else {
+    setTimeout(type, isDeleting ? 80 : 120);
+  }
+}
+type();
+
+// === Scroll Reveal for Cards ===
+const cards = document.querySelectorAll('.card');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+cards.forEach(card => observer.observe(card));
+
+// === 3D Tilt Effect on Cards ===
+document.querySelectorAll('[data-tilt]').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = (y - centerY) / 10;
+    const rotateY = (centerX - x) / 10;
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale(1)`;
+  });
 });
