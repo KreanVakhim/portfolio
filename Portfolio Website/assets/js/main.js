@@ -15,7 +15,35 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// === Live Clock (Cambodia Time) ===
+// === Mobile Menu Toggle ===
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+  body.classList.toggle('menu-open');
+});
+
+// Close menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    body.classList.remove('menu-open');
+  });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!navLinks.contains(e.target) && !hamburger.contains(e.target) && navLinks.classList.contains('active')) {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    body.classList.remove('menu-open');
+  }
+});
+
+// === Live Clock (Phnom Penh Time) ===
 function updateClock() {
   const now = new Date().toLocaleString('en-US', {
     timeZone: 'Asia/Phnom_Penh',
