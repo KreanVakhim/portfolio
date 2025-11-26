@@ -1,29 +1,34 @@
 // === Theme Toggle ===
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') body.classList.add('light');
+if (localStorage.getItem('theme') === 'light') body.classList.add('light');
 
 themeToggle.addEventListener('click', () => {
   body.classList.toggle('light');
   localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
 });
 
-// === Navbar Scroll Effect ===
+// === Navbar & Mobile Menu ===
 const navbar = document.querySelector('.navbar');
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// === Mobile Menu ===
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
-const closeMenu = document.querySelector('.close-menu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+  body.classList.toggle('menu-open');
+});
 
-hamburger.addEventListener('click', () => mobileMenu.classList.add('active'));
-closeMenu.addEventListener('click', () => mobileMenu.classList.remove('active'));
-mobileMenu.addEventListener('click', e => {
-  if (e.target === mobileMenu) mobileMenu.classList.remove('active');
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    body.classList.remove('menu-open');
+  });
 });
 
 // === Live Clock ===
@@ -44,28 +49,26 @@ const projectCards = document.querySelectorAll('.card');
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    const filter = btn.getAttribute('data-filter');
-    
+    const filter = btn.dataset.filter;
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
     projectCards.forEach(card => {
-      const tags = card.getAttribute('data-tags').split(' ');
+      const tags = card.dataset.tags.split(' ');
       if (filter === 'all' || tags.includes(filter)) {
         card.style.display = 'block';
         setTimeout(() => card.classList.add('visible'), 50);
       } else {
         card.classList.remove('visible');
-        setTimeout(() => card.style.display = 'none', 300);
+        setTimeout(() => card.style.display = 'none', 400);
       }
     });
   });
 });
 
-// === Lightbox Modal ===
+// === Lightbox ===
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.lightbox .close');
 const projectImgs = document.querySelectorAll('[data-lightbox]');
 
 projectImgs.forEach(img => {
@@ -75,26 +78,23 @@ projectImgs.forEach(img => {
   });
 });
 
-closeBtn.addEventListener('click', () => lightbox.classList.remove('visible'));
+document.querySelector('.lightbox .close').addEventListener('click', () => {
+  lightbox.classList.remove('visible');
+});
+
 lightbox.addEventListener('click', e => {
   if (e.target === lightbox) lightbox.classList.remove('visible');
 });
 
-// === Scroll Reveal ===
+// === Scroll Reveal + 3D Tilt (Same as before) ===
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.1 });
 
-projectCards.forEach(card => {
-  card.style.transition = 'all .6s ease';
-  observer.observe(card);
-});
+projectCards.forEach(card => observer.observe(card));
 
-// === 3D Tilt Effect ===
 document.querySelectorAll('[data-tilt]').forEach(card => {
   card.addEventListener('mousemove', e => {
     const rect = card.getBoundingClientRect();

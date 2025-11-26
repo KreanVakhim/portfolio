@@ -7,7 +7,7 @@
   <meta name="author" content="Vakhim Krean"/>
   <meta property="og:title" content="Projects | Vakhim Krean"/>
   <meta property="og:description" content="Responsive websites, team projects, and modern UI designs."/>
-  <meta property="og:image" content="assets/img/coffee%20teamwork.png"/>
+  <meta property="og:image" content="/Portfolio Website/assets/img/coffee%20teamwork.png"/>
   <meta property="og:url" content="https://vakhimkrean.github.io/portfolio/projects.html"/>
   <title>Projects | Vakhim Krean</title>
 
@@ -27,45 +27,36 @@
     <img src="/Portfolio Website/assets/img/Icons/moon.png" alt="Dark" class="icon moon">
   </button>
 
-  <!-- Navbar -->
+  <!-- Navbar with Hamburger -->
   <nav class="navbar">
     <div class="logo">Portfolio</div>
+
+    <button class="hamburger" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
     <ul class="nav-links">
       <li><a href="/index.html">Home</a></li>
       <li><a href="./about.html">About</a></li>
       <li><a href="./skills.html">Skills</a></li>
       <li><a href="./experience.html">Experience</a></li>
       <li><a href="./projects.html" class="active">Projects</a></li>
-      <li><a href="./contact.html"> Contact</a></li>
+      <li><a href="./contact.html">Contact</a></li>
     </ul>
-    <button class="hamburger" aria-label="Toggle menu">
-      <img src="assets/img/icons/menu.svg" alt="Menu" class="menu-icon">
-    </button>
   </nav>
-
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu hidden">
-    <button class="close-menu" aria-label="Close menu">×</button>
-    <ul class="mobile-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
 
   <!-- Hero -->
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-content">
         <h1>My Projects</h1>
-        <p class="desc">Click image to view full-size • Use filters below</p>
+        <p class="desc">Click on any image to view full-size • Use filters below</p>
       </div>
       <div class="hero-image">
         <div class="hexagon">
-          <img src="/Portfolio Website/assets/img/profile.png" alt="Vakhim Krean" class="avatar" loading="lazy">
+          <img src="/Portfolio Website/assets/img/profile.png" alt="Vakhim Krean" loading="lazy">
         </div>
       </div>
     </div>
@@ -92,7 +83,7 @@
         <!-- Project 1: Coffee Shop (Teamwork) -->
         <div class="card" data-tags="html js team" data-tilt>
           <div class="img-wrapper">
-            <img src="/Portfolio Website/assets/img/coffee teamwork.png" alt="Coffee Shop - Team Project" class="project-img" data-lightbox>
+            <img src="/Portfolio Website/assets/img/coffee%20teamwork.png" alt="Coffee Shop - Team Project" class="project-img" data-lightbox>
           </div>
           <div class="card-body">
             <h3>Coffee Shop (Teamwork)</h3>
@@ -100,7 +91,7 @@
             <p class="tech"><strong>Tech:</strong> HTML, CSS, JavaScript</p>
             <div class="btns">
               <a href="https://project-gamma-gold.vercel.app/" target="_blank" class="btn primary">Live Demo</a>
-              <a href="https://github.com/yourusername/coffee-teamwork" target="_blank" class="btn outline">GitHub</a>
+              <a href="https://github.com/vakhimkrean/coffee-teamwork" target="_blank" class="btn outline">GitHub</a>
             </div>
           </div>
         </div>
@@ -108,25 +99,26 @@
         <!-- Project 2: Coffee Shop (Solo Design) -->
         <div class="card" data-tags="html js tailwind" data-tilt>
           <div class="img-wrapper">
-            <img src="/Portfolio Website/assets/img/coffee My self.png" alt="Coffee Shop - Solo Design" class="project-img" data-lightbox>
+            <img src="/Portfolio Website/assets/img/coffee%20My%20self.png" alt="Coffee Shop - Solo Design" class="project-img" data-lightbox>
           </div>
           <div class="card-body">
             <h3>Coffee Shop (Solo Design)</h3>
-            <p>Personal redesign with modern UI, animations, and mobile-first layout.</p>
-            <p class="tech"><strong>Tech:</strong> HTML, CSS, JavaScript, Tailwind</p>
+            <p>Personal redesign with modern UI, smooth animations, and mobile-first layout.</p>
+            <p class="tech"><strong>Tech:</strong> HTML, CSS, JavaScript, Tailwind CSS</p>
             <div class="btns">
               <a href="https://project-design-kohl.vercel.app/" target="_blank" class="btn primary">Live Demo</a>
-              <a href="https://github.com/KreanVakhim/Project-design" target="_blank" class="btn outline">GitHub</a>
+              <a href="https://github.com/vakhimkrean/Project-design" target="_blank" class="btn outline">GitHub</a>
             </div>
           </div>
         </div>
 
+        <!-- Add more projects here later -->
       </div>
     </div>
   </section>
 
   <!-- Lightbox Modal -->
-  <div id="lightbox" class="lightbox hidden">
+  <div id="lightbox" class="lightbox">
     <div class="lightbox-content">
       <span class="close">×</span>
       <img src="" alt="" id="lightbox-img">
@@ -135,28 +127,28 @@
 
   <!-- Footer -->
   <footer class="footer">
-  <div class="footer-inner">
-    <p class="copyright">
-      © 2025 <strong>Vakhim Krean</strong>. Built with love in <span class="kh">Cambodia</span>.
-    </p>
-    <p class="time">
-      Currently: <strong id="live-time">Loading...</strong> • Phnom Penh, Cambodia
-    </p>
-    <div class="social">
-      <a href="mailto:vakhim.krean@student.passerellesnumeriques.org" class="social-link" aria-label="Email">
-        <img src="/Portfolio Website/assets/img/Icons/email.png" alt="Email" class="icon">
-      </a>
-      <a href="https://github.com/vakhimkrean" target="_blank" class="social-link" aria-label="GitHub">
-        <img src="/Portfolio Website/assets/img/Icons/github.png" alt="GitHub" class="icon">
-      </a>
-      <a href="https://linkedin.com/in/vakhimkrean" target="_blank" class="social-link" aria-label="LinkedIn">
-        <img src="/Portfolio Website/assets/img/Icons/linkedin.png" alt="LinkedIn" class="icon">
-      </a>
+    <div class="footer-inner">
+      <p class="copyright">
+        © 2025 <strong>Vakhim Krean</strong>. Built with love in <span class="kh">Cambodia</span>.
+      </p>
+      <p class="time">
+        Currently: <strong id="live-time">Loading...</strong> • Phnom Penh, Cambodia
+      </p>
+      <div class="social">
+        <a href="mailto:vakhim.krean@student.passerellesnumeriques.org" class="social-link" aria-label="Email">
+          <img src="/Portfolio Website/assets/img/Icons/email.png" alt="Email" class="icon">
+        </a>
+        <a href="https://github.com/vakhimkrean" target="_blank" class="social-link" aria-label="GitHub">
+          <img src="/Portfolio Website/assets/img/Icons/github.png" alt="GitHub" class="icon">
+        </a>
+        <a href="https://linkedin.com/in/vakhimkrean" target="_blank" class="social-link" aria-label="LinkedIn">
+          <img src="/Portfolio Website/assets/img/Icons/linkedin.png" alt="LinkedIn" class="icon">
+        </a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-  <!-- Scripts -->
+  <!-- Script -->
   <script src="/Portfolio Website/assets/js/projects.js"></script>
 </body>
 </html>

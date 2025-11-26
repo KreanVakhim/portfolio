@@ -9,10 +9,35 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
 });
 
-// === Navbar Scroll Effect ===
+// === Navbar Scroll & Mobile Menu ===
 const navbar = document.querySelector('.navbar');
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+  body.classList.toggle('menu-open');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    body.classList.remove('menu-open');
+  });
+});
+
+document.addEventListener('click', (e) => {
+  if (!navLinks.contains(e.target) && !hamburger.contains(e.target) && navLinks.classList.contains('active')) {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    body.classList.remove('menu-open');
+  }
 });
 
 // === Live Clock ===
@@ -27,8 +52,8 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
-// === Scroll Reveal ===
-const cards = document.querySelectorAll('.card');
+// === Scroll Reveal & Tilt ===
+const cards = document.querySelectorAll('.card, .hobbies .box');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -37,9 +62,9 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.15 });
+
 cards.forEach(card => observer.observe(card));
 
-// === 3D Tilt Effect ===
 document.querySelectorAll('[data-tilt]').forEach(card => {
   card.addEventListener('mousemove', e => {
     const rect = card.getBoundingClientRect();

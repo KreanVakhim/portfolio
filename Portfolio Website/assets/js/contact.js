@@ -9,10 +9,35 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
 });
 
-// === Navbar Scroll Effect ===
+// === Navbar Scroll & Mobile Menu ===
 const navbar = document.querySelector('.navbar');
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+  body.classList.toggle('menu-open');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    body.classList.remove('menu-open');
+  });
+});
+
+document.addEventListener('click', (e) => {
+  if (!navLinks.contains(e.target) && !hamburger.contains(e.target) && navLinks.classList.contains('active')) {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    body.classList.remove('menu-open');
+  }
 });
 
 // === Live Clock ===
@@ -45,7 +70,7 @@ form.addEventListener('submit', async (e) => {
     if (response.ok) {
       successMsg.classList.remove('hidden');
       form.reset();
-      setTimeout(() => successMsg.classList.add('hidden'), 5000);
+      setTimeout(() => successMsg.classList.add('hidden'), 6000);
     } else {
       alert('Oops! Something went wrong. Please try again.');
     }
@@ -54,7 +79,7 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
-// === Scroll Reveal ===
+// === Scroll Reveal & 3D Tilt ===
 const cards = document.querySelectorAll('.card');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -64,9 +89,9 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.15 });
+
 cards.forEach(card => observer.observe(card));
 
-// === 3D Tilt Effect ===
 document.querySelectorAll('[data-tilt]').forEach(card => {
   card.addEventListener('mousemove', e => {
     const rect = card.getBoundingClientRect();

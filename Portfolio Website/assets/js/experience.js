@@ -9,10 +9,27 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
 });
 
-// === Navbar Scroll Effect ===
+// === Navbar Scroll & Mobile Menu ===
 const navbar = document.querySelector('.navbar');
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+  body.classList.toggle('menu-open');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    body.classList.remove('menu-open');
+  });
 });
 
 // === Live Clock ===
@@ -29,12 +46,11 @@ updateClock();
 
 // === Stats Counter ===
 const counters = document.querySelectorAll('.count');
-const speed = 200;
-
 counters.forEach(counter => {
   const updateCount = () => {
     const target = +counter.getAttribute('data-target');
     const count = +counter.innerText;
+    const speed = 200;
     const inc = target / speed;
 
     if (count < target) {
@@ -50,29 +66,23 @@ counters.forEach(counter => {
       updateCount();
       observer.unobserve(counter);
     }
-  }, { threshold: 0.5 });
+  }, { threshold: 0.6 });
 
   observer.observe(counter);
 });
 
-// === Scroll Reveal ===
-const cards = document.querySelectorAll('.card, .award');
-const observer = new IntersectionObserver((entries) => {
+// === Scroll Reveal for Cards & Awards ===
+const revealElements = document.querySelectorAll('.card, .award');
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-      observer.unobserve(entry.target);
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.15 });
 
-cards.forEach(card => {
-  card.style.opacity = '0';
-  card.style.transform = 'translateY(30px)';
-  card.style.transition = 'all .6s ease';
-  observer.observe(card);
-});
+revealElements.forEach(el => revealObserver.observe(el));
 
 // === 3D Tilt Effect ===
 document.querySelectorAll('[data-tilt]').forEach(card => {
