@@ -73,6 +73,7 @@ body.light {
 /* Desktop Nav Links */
 .nav-links {
   display: flex;
+  margin-right: 20px;
   gap: 2.5rem;
   list-style: none;
   align-items: center;
@@ -228,7 +229,6 @@ body.menu-open::before {
   width: 26px;
   height: 26px;
   position: absolute;
-  margin-bottom: 5px;
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
