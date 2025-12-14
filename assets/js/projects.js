@@ -56,10 +56,11 @@ filterBtns.forEach(btn => {
     projectCards.forEach(card => {
       const tags = card.dataset.tags.split(' ');
       if (filter === 'all' || tags.includes(filter)) {
+        card.style.opacity = '0';
         card.style.display = 'block';
-        setTimeout(() => card.classList.add('visible'), 50);
+        setTimeout(() => card.style.opacity = '1', 50);
       } else {
-        card.classList.remove('visible');
+        card.style.opacity = '0';
         setTimeout(() => card.style.display = 'none', 400);
       }
     });
@@ -75,26 +76,21 @@ projectImgs.forEach(img => {
   img.addEventListener('click', () => {
     lightboxImg.src = img.src;
     lightbox.classList.add('visible');
+    document.body.style.overflow = 'hidden';
   });
 });
 
-document.querySelector('.lightbox .close').addEventListener('click', () => {
-  lightbox.classList.remove('visible');
-});
-
+document.querySelector('.lightbox .close').addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', e => {
-  if (e.target === lightbox) lightbox.classList.remove('visible');
+  if (e.target === lightbox) closeLightbox();
 });
 
-// === Scroll Reveal + 3D Tilt (Same as before) ===
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.1 });
+function closeLightbox() {
+  lightbox.classList.remove('visible');
+  document.body.style.overflow = '';
+}
 
-projectCards.forEach(card => observer.observe(card));
-
+// === 3D Tilt Effect ===
 document.querySelectorAll('[data-tilt]').forEach(card => {
   card.addEventListener('mousemove', e => {
     const rect = card.getBoundingClientRect();
