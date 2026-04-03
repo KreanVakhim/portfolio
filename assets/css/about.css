@@ -359,6 +359,12 @@ h2 {
 
 .info .grid { grid-template-columns: repeat(2, 1fr); }
 
+.bg .stack {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+}
+
 /* Background Cards */
 .bg-card {
   position: relative;
@@ -367,35 +373,39 @@ h2 {
   background-position: center;
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(0,221,235,.3);
-  transition: all .6s ease;
-  cursor: pointer;
+  border: 1px solid rgba(90, 235, 255, .45);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  cursor: zoom-in;
 }
 
 .bg-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(10,10,26,.9), rgba(0,221,235,.3));
+  background: linear-gradient(90deg, rgba(9,11,28,.86) 0%, rgba(10,16,34,.74) 46%, rgba(9,42,58,.54) 100%);
   z-index: 1;
 }
 
 .bg-card .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10,10,26,.6);
-  backdrop-filter: blur(2px);
+  background: rgba(6,10,24,.22);
+  backdrop-filter: blur(1.4px);
   z-index: 1;
-  transition: backdrop-filter .4s;
+  transition: background .25s ease, backdrop-filter .25s ease;
 }
 
-.bg-card:hover .overlay { backdrop-filter: blur(4px); }
+.bg-card:hover .overlay {
+  background: rgba(6,10,24,.18);
+  backdrop-filter: blur(1px);
+}
 
 .bg-card .content {
   position: relative;
   z-index: 2;
   padding: 1.8rem;
-  color: #e0e0ff;
+  color: #eef3ff;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -404,21 +414,107 @@ h2 {
 
 .bg-card h3 {
   font-size: 1.4rem;
-  color: #00ddeb;
+  color: #08e5ff;
   margin-bottom: .5rem;
-  text-shadow: 0 0 10px rgba(0,221,235,.5);
+  line-height: 1.2;
+  text-shadow: 0 0 12px rgba(8,229,255,.22);
 }
 
 .bg-card p {
   font-size: .95rem;
-  opacity: .9;
+  opacity: .94;
   margin: .3rem 0;
   line-height: 1.5;
 }
 
 .bg-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(0,221,235,.3);
+  transform: translateY(-2px);
+  border-color: rgba(90, 235, 255, .65);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, .24);
+}
+
+.bg-card:focus-visible {
+  outline: 2px solid #00ddeb;
+  outline-offset: 4px;
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  z-index: 1000;
+}
+
+.image-modal[hidden] {
+  display: none;
+}
+
+.image-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 7, 18, .84);
+  backdrop-filter: blur(6px);
+}
+
+.image-modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 980px);
+  max-height: 90vh;
+  overflow: auto;
+  border: 1px solid rgba(0,221,235,.24);
+  border-radius: 22px;
+  background: rgba(10,10,26,.96);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .45);
+}
+
+.image-modal-dialog img {
+  display: block;
+  width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  background: #060914;
+}
+
+.image-modal-caption {
+  padding: 1.25rem 1.4rem 1.4rem;
+}
+
+.image-modal-caption h3 {
+  margin-bottom: .4rem;
+  color: #00ddeb;
+}
+
+.image-modal-caption p {
+  margin: 0;
+  color: rgba(224,224,255,.88);
+  line-height: 1.6;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: .85rem;
+  right: .85rem;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(10,10,26,.75);
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.image-modal-close:hover {
+  background: rgba(0,221,235,.2);
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 /* Certificates & Hobby Cards */
@@ -520,6 +616,19 @@ body.light .social-link:hover .icon { filter: brightness(0) invert(1); }
   h1 { font-size: 2.8rem; }
   .tag { font-size: 1.2rem; }
   .info .grid { grid-template-columns: 1fr; }
+  .bg-card {
+    height: 260px;
+  }
+  .bg-card .content {
+    padding: 1.6rem;
+  }
+  .bg-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
+  }
+  .bg-card p {
+    font-size: .95rem;
+  }
 }
 
 @media (max-width: 480px) {

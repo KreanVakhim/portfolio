@@ -80,3 +80,62 @@ document.querySelectorAll('[data-tilt]').forEach(card => {
     card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale(1)`;
   });
 });
+
+// === Background Card Image Preview ===
+const bgCards = document.querySelectorAll('.bg-card');
+const imageModal = document.getElementById('bg-image-modal');
+const imageView = document.getElementById('bg-image-view');
+const imageTitle = document.getElementById('bg-image-title');
+const imageDescription = document.getElementById('bg-image-description');
+
+if (imageModal && imageView && imageTitle && imageDescription && bgCards.length) {
+  const closeModal = () => {
+    imageModal.hidden = true;
+    imageView.src = '';
+    imageView.alt = '';
+    imageTitle.textContent = '';
+    imageDescription.textContent = '';
+    body.classList.remove('modal-open');
+  };
+
+  const openModal = (card) => {
+    const backgroundImage = window.getComputedStyle(card).backgroundImage;
+    const imageMatch = backgroundImage.match(/url\((['"]?)(.*?)\1\)/);
+    const heading = card.querySelector('h3')?.textContent?.trim() || 'Background image';
+    const description = Array.from(card.querySelectorAll('p'))
+      .map((paragraph) => paragraph.textContent.trim())
+      .filter(Boolean)
+      .join(' • ');
+
+    if (!imageMatch?.[2]) return;
+
+    imageView.src = imageMatch[2];
+    imageView.alt = heading;
+    imageTitle.textContent = heading;
+    imageDescription.textContent = description;
+    imageModal.hidden = false;
+    body.classList.add('modal-open');
+  };
+
+  bgCards.forEach((card) => {
+    card.addEventListener('click', () => openModal(card));
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal(card);
+      }
+    });
+  });
+
+  imageModal.addEventListener('click', (event) => {
+    if (event.target.hasAttribute('data-close-modal')) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !imageModal.hidden) {
+      closeModal();
+    }
+  });
+}
